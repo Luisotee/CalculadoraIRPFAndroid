@@ -11,7 +11,7 @@ import {
 } from "native-base";
 import { FormAll } from "./forms";
 
-export function MainCard() {
+export function MainCard({ children }: any) {
   return (
     <Center>
       <Container p="0" mt="5" w="100%">
@@ -36,7 +36,7 @@ export function MainCard() {
                 backgroundColor: "gray.50",
               }}
             >
-              <FormAll />
+              {children}
             </Box>
           </Box>
         </HStack>

@@ -1,53 +1,78 @@
+import { useNavigation } from "@react-navigation/native";
 import { Box, Button, FormControl, Select, Stack, Text } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import CurrencyInput from "react-native-currency-input";
 import { MoneyI } from "../interface";
+import { calculate } from "./calculate";
+import { MainCard } from "./main-card";
 
 export function FormAll() {
-  const [income, setIncome] = React.useState(Number);
-  const [pension, setPension] = React.useState(Number);
-  const [others, setOthers] = React.useState(Number);
+  const navigation = useNavigation();
+  const [income, setIncome] = useState(Number);
+  const [pension, setPension] = useState(Number);
+  const [others, setOthers] = useState(Number);
+  const [dependente, setDependente] = useState(String);
+  const [taxes, setTaxes] = useState(Number);
+  const [message, setMessage] = useState(String);
+
+  const data = {
+    income: income,
+    setIncome: setIncome,
+    pension: pension,
+    setPension: setPension,
+    others: others,
+    setOthers: setOthers,
+    dependente: dependente,
+    setDependente: setDependente,
+    taxes: taxes,
+    setTaxes: setTaxes,
+    message: message,
+    setMessage: setMessage,
+  };
 
   return (
-    <Stack p="2">
-      <FormControl isRequired>
-        <FormControl.Label>Renda anual </FormControl.Label>
-        <MoneyInput value={income} setValue={setIncome} />
-        <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
-      </FormControl>
-
-      <FormControl mt="5" isRequired>
-        <FormControl.Label>Dependentes </FormControl.Label>
-        <Select placeholder="Dependentes">
-          <Select.Item label="0" value="0" />
-          <Select.Item label="1" value="1" />
-          <Select.Item label="2" value="2" />
-          <Select.Item label="3" value="3" />
-          <Select.Item label="4" value="4" />
-          <Select.Item label="5" value="5" />
-          <Select.Item label="6" value="6" />
-          <Select.Item label="7" value="7" />
-          <Select.Item label="8" value="8" />
-          <Select.Item label="9" value="9" />
-          <Select.Item label="10" value="10" />
-        </Select>
-        <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
-      </FormControl>
-
-      <FormControl mt="5">
-        <FormControl.Label>Pensão alimentícia </FormControl.Label>
-        <MoneyInput value={pension} setValue={setPension} />
-        <FormControl.HelperText>Item opcional</FormControl.HelperText>
-      </FormControl>
-
-      <FormControl mt="5">
-        <FormControl.Label>Outras deduções </FormControl.Label>
-        <MoneyInput value={others} setValue={setOthers} />
-        <FormControl.HelperText>Item opcional</FormControl.HelperText>
-      </FormControl>
-
-      <Button mt="5">CALCULAR</Button>
-    </Stack>
+    <MainCard>
+      <Stack p="2">
+        <FormControl isRequired>
+          <FormControl.Label>Sálario bruto </FormControl.Label>
+          <MoneyInput value={income} setValue={setIncome} />
+          <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
+        </FormControl>
+        <FormControl mt="5" isRequired>
+          <FormControl.Label>Dependentes </FormControl.Label>
+          <Select
+            placeholder="Dependentes"
+            onValueChange={(value) => setDependente(value)}
+          >
+            <Select.Item label="0" value="0" />
+            <Select.Item label="1" value="1" />
+            <Select.Item label="2" value="2" />
+            <Select.Item label="3" value="3" />
+            <Select.Item label="4" value="4" />
+            <Select.Item label="5" value="5" />
+            <Select.Item label="6" value="6" />
+            <Select.Item label="7" value="7" />
+            <Select.Item label="8" value="8" />
+            <Select.Item label="9" value="9" />
+            <Select.Item label="10" value="10" />
+          </Select>
+          <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
+        </FormControl>
+        <FormControl mt="5">
+          <FormControl.Label>Pensão alimentícia </FormControl.Label>
+          <MoneyInput value={pension} setValue={setPension} />
+          <FormControl.HelperText>Item opcional</FormControl.HelperText>
+        </FormControl>
+        <FormControl mt="5">
+          <FormControl.Label>Outras deduções </FormControl.Label>
+          <MoneyInput value={others} setValue={setOthers} />
+          <FormControl.HelperText>Item opcional</FormControl.HelperText>
+        </FormControl>
+        <Button mt="5" onPress={() => navigation.navigate("ResultScreen")}>
+          CALCULAR
+        </Button>
+      </Stack>
+    </MainCard>
   );
 }
 
