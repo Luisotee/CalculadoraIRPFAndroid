@@ -1,10 +1,14 @@
-import { Text } from "native-base";
+import { Stack, Text } from "native-base";
 import { MainCard } from "./main-card";
 
-export function ResultScreen() {
+export function ResultScreen({ route }: any) {
+  const data = route.params;
+  console.log(data);
   return (
     <MainCard>
-      <Text>Oi</Text>
+      <Stack p={2}>
+        <Text fontSize="xl">{data}</Text>
+      </Stack>
     </MainCard>
   );
 }

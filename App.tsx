@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppWrapper } from "./components/app-wrapper";
 import { FormAll } from "./components/forms";
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <AppWrapper>
       <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName="ResultScreen">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={FormAll}

@@ -30,19 +30,25 @@ export function FormAll() {
     setMessage: setMessage,
   };
 
+  function handleCalculate() {
+    calculate({ data });
+    const teste = [5, 15, 20];
+    navigation.navigate("ResultScreen", { teste });
+  }
+
   return (
     <MainCard>
       <Stack p="2">
         <FormControl isRequired>
           <FormControl.Label>Sálario bruto </FormControl.Label>
-          <MoneyInput value={income} setValue={setIncome} />
+          <MoneyInput value={data.income} setValue={data.setIncome} />
           <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5" isRequired>
           <FormControl.Label>Dependentes </FormControl.Label>
           <Select
             placeholder="Dependentes"
-            onValueChange={(value) => setDependente(value)}
+            onValueChange={(value) => data.setDependente(value)}
           >
             <Select.Item label="0" value="0" />
             <Select.Item label="1" value="1" />
@@ -60,15 +66,15 @@ export function FormAll() {
         </FormControl>
         <FormControl mt="5">
           <FormControl.Label>Pensão alimentícia </FormControl.Label>
-          <MoneyInput value={pension} setValue={setPension} />
+          <MoneyInput value={data.pension} setValue={data.setPension} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
           <FormControl.Label>Outras deduções </FormControl.Label>
-          <MoneyInput value={others} setValue={setOthers} />
+          <MoneyInput value={data.others} setValue={data.setOthers} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
-        <Button mt="5" onPress={() => navigation.navigate("ResultScreen")}>
+        <Button mt="5" onPress={handleCalculate}>
           CALCULAR
         </Button>
       </Stack>
