@@ -6,6 +6,7 @@ export function ResultScreen({ route }: any) {
 
   let ifTaxes = false;
   if (taxes > 0) ifTaxes = true;
+
   return (
     <MainCard>
       <Stack p={2}>

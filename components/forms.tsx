@@ -1,5 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
-import { Box, Button, FormControl, Select, Stack, Text } from "native-base";
+import {
+  Box,
+  Button,
+  FormControl,
+  HStack,
+  Select,
+  Stack,
+  Text,
+} from "native-base";
 import React, { useState } from "react";
 import CurrencyInput from "react-native-currency-input";
 import { MoneyI } from "../interface";
@@ -39,6 +47,16 @@ export function FormAll() {
       message: data.message,
       taxes: data.taxes,
     });
+    cleanAll();
+  }
+
+  function cleanAll() {
+    setIncome(0);
+    setPension(0);
+    setOthers(0);
+    setDependente(0);
+    setTaxes(0);
+    setMessage("");
   }
 
   return (
@@ -79,9 +97,14 @@ export function FormAll() {
           <MoneyInput value={data.others} setValue={data.setOthers} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
-        <Button mt="5" onPress={handleCalculate}>
-          CALCULAR
-        </Button>
+        <HStack space={8} justifyContent="center">
+          <Button mt="5" size="lg" colorScheme="secondary" onPress={cleanAll}>
+            Limpar
+          </Button>
+          <Button mt="5" size="lg" onPress={handleCalculate}>
+            Calcular
+          </Button>
+        </HStack>
       </Stack>
     </MainCard>
   );
