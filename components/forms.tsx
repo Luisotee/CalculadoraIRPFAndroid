@@ -39,13 +39,12 @@ export function FormAll() {
   };
 
   function handleCalculate() {
-    calculate({ data });
-    const results = [data.income, data.message, data.taxes];
-    console.log(data);
+    const res = calculate({ data });
+    console.log(res);
     navigation.navigate("ResultScreen", {
-      income: data.income,
-      message: data.message,
-      taxes: data.taxes,
+      income: res[0],
+      message: res[2],
+      taxes: res[1],
     });
     cleanAll();
   }
@@ -67,11 +66,13 @@ export function FormAll() {
           <MoneyInput value={data.income} setValue={data.setIncome} />
           <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
         </FormControl>
-        <FormControl mt="5" isRequired>
+        <FormControl mt="5">
           <FormControl.Label>Dependentes </FormControl.Label>
           <Select
             placeholder="Dependentes"
             onValueChange={(value) => data.setDependente(value)}
+            defaultValue="0"
+            selectedValue={data.dependente}
           >
             <Select.Item label="0" value="0" />
             <Select.Item label="1" value="1" />
@@ -85,7 +86,7 @@ export function FormAll() {
             <Select.Item label="9" value="9" />
             <Select.Item label="10" value="10" />
           </Select>
-          <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
+          <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
           <FormControl.Label>Pensão alimentícia </FormControl.Label>

@@ -1,8 +1,10 @@
 import { Stack, Text } from "native-base";
+import { useState } from "react";
 import { MainCard } from "./main-card";
 
 export function ResultScreen({ route }: any) {
   const { income, message, taxes } = route.params;
+  const [displayMessage, setdisplayMessage] = useState(message);
 
   let ifTaxes = false;
   if (taxes > 0) ifTaxes = true;
@@ -18,18 +20,8 @@ export function ResultScreen({ route }: any) {
           })}
         </Text>
         <Text mt="10" fontSize="xl">
-          {message}
+          {displayMessage}
         </Text>
-        {ifTaxes ? (
-          <Text mt="10" fontSize="xl">
-            {taxes.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </Text>
-        ) : (
-          <Text></Text>
-        )}
       </Stack>
     </MainCard>
   );
