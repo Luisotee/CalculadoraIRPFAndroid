@@ -32,8 +32,13 @@ export function FormAll() {
 
   function handleCalculate() {
     calculate({ data });
-    const teste = [5, 15, 20];
-    navigation.navigate("ResultScreen", { teste });
+    const results = [data.income, data.message, data.taxes];
+    console.log(data);
+    navigation.navigate("ResultScreen", {
+      income: data.income,
+      message: data.message,
+      taxes: data.taxes,
+    });
   }
 
   return (
