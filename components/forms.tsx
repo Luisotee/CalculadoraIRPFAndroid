@@ -40,7 +40,6 @@ export function FormAll() {
 
   function handleCalculate() {
     const res = calculate({ data });
-    console.log(res);
     navigation.navigate("ResultScreen", {
       income: res[0],
       message: res[2],
