@@ -17,7 +17,7 @@ import { MainCard } from "./main-card";
 export function FormAll() {
   const navigation = useNavigation();
   const [income, setIncome] = useState(Number);
-  const [pension, setPension] = useState(Number);
+  const [education, setEducation] = useState(Number);
   const [others, setOthers] = useState(Number);
   const [dependente, setDependente] = useState(String);
   const [taxes, setTaxes] = useState(Number);
@@ -26,8 +26,8 @@ export function FormAll() {
   const data = {
     income: income,
     setIncome: setIncome,
-    pension: pension,
-    setPension: setPension,
+    education: education,
+    setEducation: setEducation,
     others: others,
     setOthers: setOthers,
     dependente: dependente,
@@ -51,7 +51,7 @@ export function FormAll() {
 
   function cleanAll() {
     setIncome(0);
-    setPension(0);
+    setEducation(0);
     setOthers(0);
     setDependente(0);
     setTaxes(0);
@@ -62,7 +62,7 @@ export function FormAll() {
     <MainCard>
       <Stack p="2">
         <FormControl isRequired>
-          <FormControl.Label>Sálario bruto </FormControl.Label>
+          <FormControl.Label>Sálario bruto mensal </FormControl.Label>
           <MoneyInput value={data.income} setValue={data.setIncome} />
           <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
         </FormControl>
@@ -89,12 +89,12 @@ export function FormAll() {
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
-          <FormControl.Label>Pensão alimentícia </FormControl.Label>
-          <MoneyInput value={data.pension} setValue={data.setPension} />
+          <FormControl.Label>Despesa com instrução mensal </FormControl.Label>
+          <MoneyInput value={data.education} setValue={data.setEducation} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
-          <FormControl.Label>Outras deduções </FormControl.Label>
+          <FormControl.Label>Outras deduções mensais</FormControl.Label>
           <MoneyInput value={data.others} setValue={data.setOthers} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>

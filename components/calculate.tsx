@@ -2,8 +2,17 @@ import { FormDataI } from "../interface";
 
 export function calculate({ data }: any) {
   let taxableIncome = data.income * 12 - data.dependente * 2275.08;
+  let educationCost;
   let sumTaxes = 0;
   let message = "";
+
+  if (data.education * 12 > 3561.5) {
+    educationCost = 3561.5;
+    taxableIncome -= educationCost;
+  } else {
+    educationCost = data.education * 12;
+    taxableIncome -= educationCost;
+  }
 
   if (taxableIncome <= 22847.76) {
     message =
