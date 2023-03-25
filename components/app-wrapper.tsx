@@ -13,6 +13,7 @@ export const AppWrapper = ({ children }: Props) => (
         _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "blueGray.50" }}
         flex={1}
+        safeArea
       >
         {children}
       </Box>

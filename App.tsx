@@ -24,7 +24,6 @@ export default function App() {
   return (
     <AppWrapper>
       <AlertStart />
-      <StatusBar style="auto" />
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
