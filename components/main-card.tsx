@@ -9,7 +9,6 @@ import {
   HStack,
   Stack,
 } from "native-base";
-import { FormAll } from "./forms";
 
 export function MainCard({ children }: any) {
   return (

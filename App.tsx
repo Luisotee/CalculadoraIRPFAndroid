@@ -14,7 +14,8 @@ import {
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { AppWrapper } from "./components/app-wrapper";
-import { FormAll } from "./components/forms";
+import { FormsTab } from "./components/form";
+import { FormMonthly } from "./components/form/form-monthly";
 import { MainCard } from "./components/main-card";
 import { ResultScreen } from "./components/result-screen";
 
@@ -27,7 +28,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
-          component={FormAll}
+          component={FormsTab}
           options={{ headerShown: false }}
         />
         <Stack.Screen

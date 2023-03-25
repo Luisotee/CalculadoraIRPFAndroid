@@ -10,11 +10,16 @@ import {
 } from "native-base";
 import React, { useState } from "react";
 import CurrencyInput from "react-native-currency-input";
-import { MoneyI } from "../interface";
-import { calculate } from "./calculate";
-import { MainCard } from "./main-card";
+import { MoneyI } from "../../interface";
+import { calculate } from "../calculate";
+import { calculateYearly } from "../calculate-yearly";
+import { MainCard } from "../main-card";
 
-export function FormAll() {
+function MoneyInput({ value, setValue }: MoneyI) {
+  return <CurrencyInput value={value} onChangeValue={setValue} prefix="R$  " />;
+}
+
+export function FormYearly() {
   const navigation = useNavigation();
   const [income, setIncome] = useState(Number);
   const [education, setEducation] = useState(Number);
@@ -39,7 +44,7 @@ export function FormAll() {
   };
 
   function handleCalculate() {
-    const res = calculate({ data });
+    const res = calculateYearly({ data });
     navigation.navigate("ResultScreen", {
       income: res[0],
       message: res[2],
@@ -61,7 +66,7 @@ export function FormAll() {
     <MainCard>
       <Stack p="2">
         <FormControl isRequired>
-          <FormControl.Label>Sálario bruto mensal </FormControl.Label>
+          <FormControl.Label>Sálario bruto anual </FormControl.Label>
           <MoneyInput value={data.income} setValue={data.setIncome} />
           <FormControl.HelperText>Item obrigatório</FormControl.HelperText>
         </FormControl>
@@ -88,12 +93,12 @@ export function FormAll() {
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
-          <FormControl.Label>Despesa com instrução mensal </FormControl.Label>
+          <FormControl.Label>Despesa com instrução anual </FormControl.Label>
           <MoneyInput value={data.education} setValue={data.setEducation} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
         <FormControl mt="5">
-          <FormControl.Label>Outras deduções mensais</FormControl.Label>
+          <FormControl.Label>Outras deduções anuais</FormControl.Label>
           <MoneyInput value={data.others} setValue={data.setOthers} />
           <FormControl.HelperText>Item opcional</FormControl.HelperText>
         </FormControl>
@@ -108,8 +113,4 @@ export function FormAll() {
       </Stack>
     </MainCard>
   );
-}
-
-function MoneyInput({ value, setValue }: MoneyI) {
-  return <CurrencyInput value={value} onChangeValue={setValue} prefix="R$  " />;
 }
