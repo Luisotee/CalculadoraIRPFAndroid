@@ -15,7 +15,7 @@ export function MainCard({ children }: any) {
   return (
     <ScrollView>
       <Center>
-        <Container p="0" mt="5" w="100%" mb="5">
+        <Container p="0" w="100%" mb="5">
           <HStack w="100%">
             <Box alignItems="center" w="100%">
               <Box

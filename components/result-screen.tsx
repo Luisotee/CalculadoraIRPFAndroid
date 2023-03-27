@@ -1,4 +1,4 @@
-import { Stack, Text } from "native-base";
+import { Center, Stack, Text } from "native-base";
 import { useState } from "react";
 import { MainCard } from "./main-card";
 
@@ -11,18 +11,23 @@ export function ResultScreen({ route }: any) {
 
   return (
     <MainCard>
-      <Stack p={2}>
-        <Text fontSize="xl">
-          A sua renda anual tributável é de{" "}
+      <Center>
+        <Text fontSize="2xl" color="gray.600">
+          Renda anual tributável
+        </Text>
+        <Text fontSize="xl" bold>
           {income.toLocaleString("pt-br", {
             style: "currency",
             currency: "BRL",
           })}
         </Text>
-        <Text mt="10" fontSize="xl">
+        <Text fontSize="2xl" color="gray.600" mt="10">
+          Imposto a pagar
+        </Text>
+        <Text fontSize="xl" bold>
           {displayMessage}
         </Text>
-      </Stack>
+      </Center>
     </MainCard>
   );
 }
