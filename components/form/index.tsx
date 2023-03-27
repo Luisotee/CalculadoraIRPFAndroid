@@ -66,7 +66,6 @@ function Example() {
             >
               <Pressable
                 onPress={() => {
-                  console.log(i);
                   setIndex(i);
                 }}
               >

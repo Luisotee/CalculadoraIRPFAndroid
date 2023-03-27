@@ -71,7 +71,7 @@ function AlertStart() {
                 _focus={{
                   borderWidth: 0,
                 }}
-                icon={<CloseIcon size="3" />}
+                icon={<CloseIcon size="4" />}
                 _icon={{
                   color: "coolGray.600",
                 }}
