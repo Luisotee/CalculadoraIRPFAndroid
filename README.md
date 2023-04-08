@@ -4,7 +4,7 @@ This is a simple app that allows Brazilian taxpayers to calculate their income t
 
 ## Installation
 
-You can install the app via playstore if you are in Brazil, or you can get it through [APK](google.com). 
+You can install the app via playstore if you are in Brazil, or you can get it through [APK](https://github.com/Luisotee/CalculadoraIRPFAndroid/raw/main/apk/application-47b85b06-ab63-4e62-89c1-95b3d92e0b39.apk). 
 
 <a href="https://play.google.com/store/apps/details?id=com.luisotee.ReceitaFacil"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
 
