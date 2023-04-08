@@ -34,7 +34,7 @@ export default function App() {
         <Stack.Screen
           name="ResultScreen"
           component={ResultScreen}
-          options={{ headerShown: false }}
+          options={{ title: "Resultado" }}
         />
       </Stack.Navigator>
     </AppWrapper>
