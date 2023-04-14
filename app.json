@@ -2,7 +2,7 @@
   "expo": {
     "name": "Simulador IRPF",
     "slug": "ReceitaFacil",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.luisotee.ReceitaFacil"
+      "package": "com.luisotee.ReceitaFacil",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +32,12 @@
       "eas": {
         "projectId": "84f4e589-aa8b-4dcc-bdba-2636458af4c3"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/84f4e589-aa8b-4dcc-bdba-2636458af4c3"
     }
   }
 }
