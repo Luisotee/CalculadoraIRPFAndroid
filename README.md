@@ -2,19 +2,6 @@
 
 This is a simple app that allows Brazilian taxpayers to calculate their income tax liability. The app takes into account various factors such as the taxpayer's income, deductions, and credits to provide an estimate of the tax owed to the Brazilian government.
 
-## Installation
-
-You can install the app via playstore if you are in Brazil, or you can get it through [APK](https://github.com/Luisotee/CalculadoraIRPFAndroid/raw/main/apk/SimuladorIRPF.apk). 
-
-<a href="https://play.google.com/store/apps/details?id=com.luisotee.ReceitaFacil"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
-
-## Features
-
-- Calculates income tax liability for Brazilian taxpayers.
-- Takes into account various factors such as income, deductions, and credits.
-- Provides an estimate of the tax owed to the Brazilian government.
-- Simple and easy-to-use interface.
-
 ## Screenshots
 
 <table>
@@ -39,6 +26,19 @@ You can install the app via playstore if you are in Brazil, or you can get it th
 <tr>
 <td>
 </table>
+
+## Installation
+
+You can install the app via playstore if you are in Brazil, or you can get it through [APK](https://github.com/Luisotee/CalculadoraIRPFAndroid/raw/main/apk/SimuladorIRPF.apk). 
+
+<a href="https://play.google.com/store/apps/details?id=com.luisotee.ReceitaFacil"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
+
+## Features
+
+- Calculates income tax liability for Brazilian taxpayers.
+- Takes into account various factors such as income, deductions, and credits.
+- Provides an estimate of the tax owed to the Brazilian government.
+- Simple and easy-to-use interface.
 
 ## Getting Started
 
